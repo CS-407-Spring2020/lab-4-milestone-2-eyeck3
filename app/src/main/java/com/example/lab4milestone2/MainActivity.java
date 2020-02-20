@@ -11,6 +11,8 @@ import android.location.Location;
 import android.os.Build;
 import android.Manifest;
 import androidx.annotation.NonNull;
+import android.util.Log;
+import android.widget.TextView;
 
 import android.location.LocationListener;
 
@@ -89,5 +91,25 @@ public class MainActivity extends AppCompatActivity {
         if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             startListening();
         }
+    }
+
+    public void updateLocationInfo(Location location) {
+        Log.i("LocationInfo", location.toString());
+
+        TextView latTextView = (TextView) findViewById(R.id.latTextView);
+
+        TextView lonTextView = (TextView) findViewById(R.id.lonTextView);
+
+        TextView altTextView = (TextView) findViewById(R.id.altTextView);
+
+        TextView accTextView = (TextView) findViewById(R.id.accTextView);
+
+        latTextView.setText("Latitude: " + location.getLatitude());
+
+        lonTextView.setText("Longitude: " + location.getLongitude());
+
+        altTextView.setText("Altitude: " + location.getAltitude());
+
+        accTextView.setText("Accuracy: " + location.getAccuracy());
     }
 }
