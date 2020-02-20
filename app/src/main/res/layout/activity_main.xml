@@ -13,7 +13,7 @@
         android:scaleType="fitXY"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/IMG_1104" />
+        app:srcCompat="@drawable/img_1104" />
 
     <TextView
         android:id="@+id/textView2"
